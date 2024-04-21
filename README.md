@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Laporan Praktikum
+| MatKul | Pemrograman Berbasis Framework |
+| ---    | ---           |
+| Nama   | Faricha Aulia |
+| NIM    | 2141720155    |
+| Kelas  | TI - 3I       |
 
-## Getting Started
 
-First, run the development server:
+<table><tr><td>Saya melampirkan screenshot dari setiap step yang saya lakukan pada src/assets</td></tr></table>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Pertanyaan 1 dan Jawaban
+> "Capture hasilnya dan jelaskan apa yang telah Anda pelajari dan bagaimana tampilannya saat ini?!"
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Hasil (Praktikum 1)](src/assets/01-6.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Yang saya pelajari :** 
+Saya belajar tentang penggunaan context untuk menyediakan data ke komponen-komponen di dalam pohon (tree) komponen. Selain itu, saya juga mempelajari prinsip atomic design yang membantu dalam strukturisasi komponen-komponen menjadi bagian-bagian yang lebih kecil dan mudah dikelola.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Pertanyaan 2 dan Jawaban
+> "Capture hasilnya dan buatlah laporan di README.md. Jelaskan apa yang telah Anda pelajari dan bagaimana tampilannya saat ini? Jika terjadi error, silakan perbaiki, Mengapa hal itu bisa terjadi? Jelaskan!"
 
-To learn more about Next.js, take a look at the following resources:
+![Hasil (Praktikum 1)](src/assets/01-12.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Error dan penyelesaiannya :**
+Error tersebut terjadi karena NextJS membagi komponen menjadi dua jenis: Client Component dan Server Component. Secara default, semua komponen saya dianggap sebagai Server Component. Jadi, saya perlu menandai bahwa komponen heading.tsx dan section.tsx adalah Client Component karena mereka menggunakan hook useContext yang hanya dapat digunakan pada Client Component.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Hasil akhir (Praktikum 1)](src/assets/01-15.png)
 
-## Deploy on Vercel
+**Yang saya pelajari :**
+Setelah mengatasi error tersebut, tampilan aplikasi saat ini masih sama seperti sebelumnya. Semua judul dalam satu Section memiliki ukuran yang sama tanpa perlu mengoper prop level ke setiap komponen Heading secara terpisah. Penggunaan context memungkinkan komponen Heading untuk "mengetahui" level Section terdekat di atasnya, sehingga mengatur ukuran teks secara dinamis sesuai dengan konteksnya.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Pertanyaan 3 dan Jawaban
+> "Capture hasilnya dan buatlah laporan di README.md. Jelaskan apa yang telah Anda pelajari dan bagaimana tampilannya saat ini?"
+
+![Hasil (Praktikum 1)](src/assets/01-21.png)
+
+**Yang saya pelajari :**
+- Perubahan pada komponen Section, dapat menyediakan dan menggunakan context dari komponen yang sama tanpa perlu menentukan setiap level section secara manual. Dimana dapat membaca level dari Section di atasnya dan mengoper level + 1 ke bawah secara otomatis.
+- Dengan demikian, baik komponen Heading maupun Section sekarang membaca LevelContext untuk mengetahui seberapa "dalam" mereka. Komponen Section juga membungkus anak-anaknya ke dalam LevelContext, sehingga menentukan bahwa apa pun yang ada di dalamnya berada pada level yang "lebih dalam".
+
+**Tampilan saat ini :**
+Tetap sama dengan sebelumnya, namun peningkatan ini memungkinkan manajemen level Section menjadi lebih dinamis dan otomatis, tanpa perlu menentukannya secara manual. 
+
+--- 
+
+## Pertanyaan 4 dan Jawaban
+> "Capture hasilnya dan buatlah laporan di README.md. Tambahkan teks Nama dan NIM pada bagian komponen Post agar menunjukkan itu hasil kerja Anda!"
+
+![Hasil pertama (Praktikum 2)](src/assets/02-8.png)
+![Hasil kedua (Praktikum 2)](src/assets/02-12.png)
+
+**Yang saya pelajari :**
+Mempelajari tentang bagaimana context dapat melewati komponen perantara dalam pohon komponen. Dengan menyediakan context di tingkat tertentu dalam hierarki komponen, komponen-komponen di bawahnya dapat menggunakan context tersebut tanpa perlu penyesuaian khusus.
+
+---
+
+## Pertanyaan 5 dan Jawaban 
+> "Silakan save semua dan lakukan running di browser Anda. Capture hasilnya dan buatlah laporan di README.md. Tambahkan teks Nama dan NIM pada setiap page routing agar menunjukkan itu hasil kerja Anda sendiri!
+a. Apakah toggle button tema sudah berfungsi ? jika belum, silakan perbaiki!
+b. Mengapa ketika refresh atau berpindah halaman tema tidak permanen ? Buatlah menjadi permanen walaupun page sudah direfresh dan pindah halaman!"
+
+![Hasil berkreasi (Praktikum 3)](src/assets/03-10.png)
+
+![Hasil Routing Home (Praktikum 3)](src/assets/03-16.png)
+![Hasil Routing About (Praktikum 3)](src/assets/03-17.png)
+![Hasil Routing Contact (Praktikum 3)](src/assets/03-18.png)
+![Hasil Routing Profile (Praktikum 3)](src/assets/03-19.png)
+![Hasil Routing Berubah Tema (Praktikum 3)](src/assets/03-20.png)
+
+**Jawaban 5.a :**
+Ya, Toogle Berfungsi
+
+**Jawaban 5.b :**
+- Ketika merefresh atau berpindah halaman, tema tidak tetap karena informasi tentang tema tersebut tidak tersimpan secara permanen di aplikasi.
+- Untuk membuat tema website menjadi permanen, bahkan setelah refresh atau perpindahan halaman, dapat menggunakan localStorage atau cookies pada browser. Saya menggunakan localStorage
+
+<video controls src="src/assets/03-26.mp4" title="Hasil akhir (Tema permanen)"></video>
+
+---
