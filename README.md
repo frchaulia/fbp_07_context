@@ -78,6 +78,8 @@ Ya, Toogle Berfungsi
 - Ketika merefresh atau berpindah halaman, tema tidak tetap karena informasi tentang tema tersebut tidak tersimpan secara permanen di aplikasi.
 - Untuk membuat tema website menjadi permanen, bahkan setelah refresh atau perpindahan halaman, dapat menggunakan localStorage atau cookies pada browser. Saya menggunakan localStorage
 
-<video controls src="src/assets/03-26.mp4" title="Hasil akhir (Tema permanen)"></video>
+
+https://github.com/frchaulia/fbp_07_context/assets/149360908/37d10e93-9d6a-407c-8db8-0f6a20d22b22
+
 
 ---
